@@ -25,4 +25,4 @@ hashtag = '#' + hashtag.strip()
 if len(hashtag) > 140:
     hashtag = hashtag[:140]
 
-print(hashtag)
+print("Фінальний хештег:", hashtag)
