@@ -6,37 +6,31 @@
 
 while True:
     first_number = float(input("Введіть перше число: "))
-    math_operations = input("Введіть знак математичної дії: ")
+    math_operation = input("Введіть знак математичної дії: ")
     second_number = float(input("Введіть друге число: "))
 
     result = None
 
-    if math_operations != '+' and \
-            math_operations != '-' and \
-            math_operations != '*' and \
-            math_operations != '/' and \
-            math_operations != '**' and \
-            math_operations != '//' and \
-            math_operations != '%':
-        print("Такої математичної операції немає!")
-    else:
-        if math_operations == '+':
+    match math_operation:
+        case '+':
             result = first_number + second_number
-        elif math_operations == '-':
+        case '-':
             result = first_number - second_number
-        elif math_operations == '*':
+        case '*':
             result = first_number * second_number
-        elif math_operations == '/':
+        case '/':
             if second_number == 0:
                 print("На нуль ділити неможна!")
             else:
                 result = first_number / second_number
-        elif math_operations == '**':
+        case '**':
             result = first_number ** second_number
-        elif math_operations == '//':
+        case '//':
             result = first_number // second_number
-        elif math_operations == '%':
+        case '%':
             result = first_number % second_number
+        case _:
+            print("Такої математичної операції немає!")
 
     if result != None:
         print("Результат обчислення:", result)
